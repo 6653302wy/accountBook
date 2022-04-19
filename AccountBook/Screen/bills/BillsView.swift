@@ -31,11 +31,12 @@ struct MonthOverView :View{
                     // 点击进入选择账本页
                 }) {
                     Text("账本1")
-                        .padding([.leading,.trailing], 10)
-                        .foregroundColor(Color.white)
-                        .background(Color.gray)
+                        .font(.system(size: 14))
+                        .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
+                        .foregroundColor(Color(UIColor.colorWithHexString(textTitle)))
+                        .background(Color.white)
                         .cornerRadius(50)
-                }
+                }.padding(10)
             }
             
             
@@ -44,7 +45,7 @@ struct MonthOverView :View{
                 Spacer()
                 Text("月支出：\("1398.21")").foregroundColor(Color.white)
             }
-            .padding([.leading, .trailing, .bottom], 20)
+            .padding([.leading, .trailing], 20)
         }
         .padding(.bottom, 10)
         .background(Image("billoverviewbg").resizable())
