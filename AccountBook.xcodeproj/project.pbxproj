@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5524A571280E6361009AD7B3 /* Contants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A570280E6361009AD7B3 /* Contants.swift */; };
 		5524A573280E8589009AD7B3 /* BillsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A572280E8589009AD7B3 /* BillsModel.swift */; };
+		5524A575280E8710009AD7B3 /* BillsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A574280E8710009AD7B3 /* BillsViewModel.swift */; };
 		555EF9ED2807B8C3003AB5B9 /* AccountBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EF9EC2807B8C3003AB5B9 /* AccountBookApp.swift */; };
 		555EF9EF2807B8C3003AB5B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EF9EE2807B8C3003AB5B9 /* ContentView.swift */; };
 		555EF9F12807B8C4003AB5B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555EF9F02807B8C4003AB5B9 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		5524A570280E6361009AD7B3 /* Contants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contants.swift; sourceTree = "<group>"; };
 		5524A572280E8589009AD7B3 /* BillsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsModel.swift; sourceTree = "<group>"; };
+		5524A574280E8710009AD7B3 /* BillsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillsViewModel.swift; sourceTree = "<group>"; };
 		555EF9E92807B8C3003AB5B9 /* AccountBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555EF9EC2807B8C3003AB5B9 /* AccountBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBookApp.swift; sourceTree = "<group>"; };
 		555EF9EE2807B8C3003AB5B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 			children = (
 				55B5DAA0280D8E78009ADBFC /* BillsView.swift */,
 				5524A572280E8589009AD7B3 /* BillsModel.swift */,
+				5524A574280E8710009AD7B3 /* BillsViewModel.swift */,
 			);
 			path = bills;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				559FB5D0280BEFF100969807 /* IndexView.swift in Sources */,
 				555EF9ED2807B8C3003AB5B9 /* AccountBookApp.swift in Sources */,
 				55B5DAA1280D8E78009ADBFC /* BillsView.swift in Sources */,
+				5524A575280E8710009AD7B3 /* BillsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
