@@ -38,10 +38,10 @@ struct BottomTabBarView: View{
     
     init(){
         // 更改tabView 背景色
-        UITabBar.appearance().backgroundColor = UIColor.colorWithHexString(tabBarBgColor)
+        UITabBar.appearance().backgroundColor = UIColor.hex(tabBarBgColor)
         UITabBar.appearance().backgroundImage = UIImage()
         // 更改tabView 未选中颜色
-        UITabBar.appearance().unselectedItemTintColor = UIColor.colorWithHexString(tabItemTextColor)
+        UITabBar.appearance().unselectedItemTintColor = UIColor.hex(tabItemTextColor)
 
     }
     
@@ -78,7 +78,7 @@ struct BottomTabBarView: View{
             }
         }
         // Use .accentColor modifier for changing color of selected tabItem
-        .accentColor(Color( UIColor.colorWithHexString(tabItemTextChoosenColor)))
+        .accentColor(Color( UIColor.hex(tabItemTextChoosenColor)))
     }
 }
 

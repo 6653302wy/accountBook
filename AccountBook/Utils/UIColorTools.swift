@@ -21,12 +21,12 @@ extension UIColor{
     }
     
     //MARK: - 16进制字符串转UIColor
-    class func colorWithHexString(_ hex:String) ->UIColor {
-        return colorWithHexString(hex, alpha:1)
+    class func hex(_ hex:String) ->UIColor {
+        return hexAlpha(hex, alpha:1)
     }
     
-    // 使用： xx.backgroundColor = UIColor.colorWithHexString("#f2f2f2")
-    class func colorWithHexString (_ hex:String, alpha:CGFloat) -> UIColor {
+    // 使用： xx.backgroundColor = UIColor.hex("#f2f2f2")
+    class func hexAlpha(_ hex:String, alpha:CGFloat) -> UIColor {
         var cString:String = hex.trimmingCharacters(in: NSCharacterSet.whitespacesAndNewlines).uppercased()
         if (cString.hasPrefix("#")) {
             cString = (cString as NSString).substring(from:1)

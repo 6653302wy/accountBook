@@ -15,7 +15,7 @@ struct AccountsView: View {
                     .font(.title)
             }
         }
-        .background(Color(UIColor.colorWithHexString(bgColor)))
+        .background(Color(UIColor.hex(bgColor)))
     }
 }
 

@@ -33,7 +33,7 @@ struct MonthOverView :View{
                     Text("账本1")
                         .font(.system(size: 14))
                         .padding(EdgeInsets(top: 8, leading: 20, bottom: 8, trailing: 20))
-                        .foregroundColor(Color(UIColor.colorWithHexString(textTitle)))
+                        .foregroundColor(Color(UIColor.hex(textTitle)))
                         .background(Color.white)
                         .cornerRadius(50)
                 }.padding(10)
@@ -66,8 +66,8 @@ struct BudgetView: View{
             
             ProgressView(value: self.pro)
             
-            Text("剩余：\("234.23") | 剩余日均：\("202.88")")
-                .foregroundColor(Color(UIColor.colorWithHexString(textGray)))
+            Text("剩余：\("234.23")  |  剩余日均：\("202.88")")
+                .foregroundColor(Color(UIColor.hex(textGray)))
         }
         .padding(10)
         .background(Color.white)
@@ -92,14 +92,14 @@ struct BillDetailStruct :View{
                 Text("04.28 \(self.detail.dateDes)")
                     .font(.system(size: 14))
                     .fontWeight(.bold)
-                    .foregroundColor(Color(UIColor.colorWithHexString(textTitle)))
+                    .foregroundColor(Color(UIColor.hex(textTitle)))
                 
                 Spacer()
                 
                 Text("支：\(Int(self.detail.expend))")
                     .font(.system(size: 14))
                     .fontWeight(.bold)
-                    .foregroundColor(Color(UIColor.colorWithHexString(textTitle)))
+                    .foregroundColor(Color(UIColor.hex(textTitle)))
             }
             
             Divider()
@@ -110,19 +110,19 @@ struct BillDetailStruct :View{
                     VStack(alignment: .leading){
                         Text(bill.category.name)
                             .fontWeight(.bold)
-                            .foregroundColor(Color(UIColor.colorWithHexString(textTitle)))
+                            .foregroundColor(Color(UIColor.hex(textTitle)))
                         Text(bill.desc)
                             .font(.system(size: 16))
-                            .foregroundColor(Color(UIColor.colorWithHexString(textGray)))
+                            .foregroundColor(Color(UIColor.hex(textGray)))
                     }
                     Spacer()
                     VStack(alignment: .leading){
                         Text("-23.56")
                             .fontWeight(.bold)
-                            .foregroundColor(Color(UIColor.colorWithHexString(redColor)))
+                            .foregroundColor(Color(UIColor.hex(redColor)))
                         Text("微信")
                             .font(.system(size: 16))
-                            .foregroundColor(Color(UIColor.colorWithHexString(textGray)))
+                            .foregroundColor(Color(UIColor.hex(textGray)))
                     }
                 }
             }
@@ -156,7 +156,7 @@ struct BillsView: View {
             }
         }
         .padding([.top, .bottom], 10)
-        .background(Color(UIColor.colorWithHexString(bgColor)))
+        .background(Color(UIColor.hex(bgColor)))
 //        .background(Color.gray.edgesIgnoringSafeArea(.all))
     }
 }
