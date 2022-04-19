@@ -9,7 +9,13 @@ import SwiftUI
 
 struct AccountsView: View {
     var body: some View {
-        Text("这是资产页")
+        ScrollView{
+            LazyVStack{
+                Text("资产页")
+                    .font(.title)
+            }
+        }
+        .background(Color(UIColor.colorWithHexString(bgColor)))
     }
 }
 

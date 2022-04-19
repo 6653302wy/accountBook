@@ -22,15 +22,14 @@ struct HeaderNavBarView: View{
 
 // 底部tab bar
 struct BottomTabBarView: View{
+    let tabBarBgColor = "#ffffff"
+    let tabItemTextColor = "#666666"
+    let tabItemTextChoosenColor = "#5EAAF8"
+
     struct tabBarStruct{
         var icon: String
         var tittle: String
     }
-    
-    let tabBarBgColor = "#f6f6f6"
-    let tabItemTextColor = "#666666"
-    let tabItemTextChoosenColor = "#5EAAF8"
-
     let tabs = [tabBarStruct(icon: "home", tittle: "账单"),
                                tabBarStruct(icon: "add", tittle: "") ,
                                tabBarStruct(icon: "card", tittle: "资产")]
@@ -54,7 +53,7 @@ struct BottomTabBarView: View{
                             Image(self.tabs[0].icon)
                             Text(self.tabs[0].tittle).font(.system(size: 30))
                         }
-//                        .navigationBarHidden(true)
+                        .navigationBarHidden(true)
 //                        .navigationBarTitle("")
                         .tag(0)
                 
@@ -63,7 +62,7 @@ struct BottomTabBarView: View{
                             Image(self.tabs[1].icon)
                             Text(self.tabs[1].tittle)
                         }
-//                        .navigationBarHidden(true)
+                        .navigationBarHidden(true)
 //                        .navigationBarTitle("")
                         .tag(1)
                         
@@ -73,7 +72,7 @@ struct BottomTabBarView: View{
                             Image(self.tabs[2].icon)
                             Text(self.tabs[2].tittle)
                         }
-//                        .navigationBarHidden(true)
+                        .navigationBarHidden(true)
 //                        .navigationBarTitle("")
                         .tag(2)
             }
