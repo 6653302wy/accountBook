@@ -1,5 +1,5 @@
 //
-//  BookingView.swift
+//  BookingView.swift 记账页
 //  AccountBook
 //
 //  Created by 万萍萍 on 2022/4/18.
@@ -9,7 +9,7 @@ import SwiftUI
 
 struct BookingView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text("这是记账页")
     }
 }
 
