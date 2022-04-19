@@ -1,0 +1,158 @@
+{
+    "types": [{
+            "type": 1,
+            "tittle": "支出"
+        },
+        {
+            "type": 2,
+            "tittle": "收入"
+        }
+    ],
+    "list": [{
+            "type": 1,
+            "name": "三餐",
+            "icon": "meal",
+            "subs": [],
+            "sort": 1
+        },
+        {
+            "type": 1,
+            "name": "零食",
+            "icon": "Snack",
+            "subs": [],
+            "sort": 2
+        },
+        {
+            "type": 1,
+            "name": "购物",
+            "icon": "shopping",
+            "subs": [],
+            "sort": 3
+        },
+        {
+            "type": 1,
+            "name": "交通",
+            "icon": "traffic",
+            "subs": [],
+            "sort": 4
+        },
+        {
+            "type": 1,
+            "name": "娱乐",
+            "icon": "fun",
+            "subs": [],
+            "sort": 5
+        },
+        {
+            "type": 1,
+            "name": "居家",
+            "icon": "home",
+            "subs": [
+                {
+                    "name": "日用品",
+                    "icon": "fun"
+                },
+                {
+                    "name": "房贷房租",
+                    "icon": "rent"
+                },
+                {
+                    "name": "水电煤",
+                    "icon": "watergas"
+                }
+            ],
+            "sort": 6
+        },
+        {
+            "type": 1,
+            "name": "医疗",
+            "icon": "medicine",
+            "subs": [],
+            "sort": 7
+        },
+        {
+            "type": 1,
+            "name": "教育",
+            "icon": "educate",
+            "subs": [],
+            "sort": 8
+        },
+        {
+            "type": 1,
+            "name": "人情",
+            "icon": "relation",
+            "subs": [],
+            "sort": 9
+        },
+        {
+            "type": 1,
+            "name": "父母",
+            "icon": "fealty",
+            "subs": [],
+            "sort": 10
+        },
+        {
+            "type": 1,
+            "name": "宠物",
+            "icon": "pets",
+            "subs": [],
+            "sort": 11
+        },
+        {
+            "type": 2,
+            "name": "工资",
+            "icon": "salary",
+            "subs": [],
+            "sort": 1
+        },
+        {
+            "type": 2,
+            "name": "奖金",
+            "icon": "bonus",
+            "subs": [],
+            "sort": 2
+        },
+        {
+            "type": 2,
+            "name": "红包",
+            "icon": "redpacket",
+            "subs": [],
+            "sort": 3
+        },
+        {
+            "type": 2,
+            "name": "兼职",
+            "icon": "parttime",
+            "subs": [],
+            "sort": 4
+        },
+        {
+            "type": 2,
+            "name": "投资",
+            "icon": "financial",
+            "subs": [],
+            "sort": 5
+        },
+        {
+            "type": 2,
+            "name": "报销",
+            "icon": "expense",
+            "subs": [],
+            "sort": 6
+        },
+        {
+            "type": 2,
+            "name": "AA收款",
+            "icon": "halve",
+            "subs": [],
+            "sort": 7
+        },
+        {
+            "type": 2,
+            "name": "退款",
+            "icon": "return",
+            "subs": [],
+            "sort": 8
+        }
+    ]
+}
