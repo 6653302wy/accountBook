@@ -8,18 +8,6 @@
 import SwiftUI
 
 
-// 顶部header bar
-struct HeaderNavBarView: View{
-    var body: some View {
-        HStack{
-            Image("menu").padding(.leading, 20)
-            Spacer()
-            Image("chart").padding(.trailing, 20)
-        }
-    }
-
-}
-
 // 底部tab bar
 struct BottomTabBarView: View{
     let tabBarBgColor = "#ffffff"
@@ -54,7 +42,7 @@ struct BottomTabBarView: View{
                             Text(self.tabs[0].tittle).font(.system(size: 30))
                         }
                         .navigationBarHidden(true)
-//                        .navigationBarTitle("")
+                        .navigationBarTitle("")
                         .tag(0)
                 
                 BookingView()
@@ -63,7 +51,7 @@ struct BottomTabBarView: View{
                             Text(self.tabs[1].tittle)
                         }
                         .navigationBarHidden(true)
-//                        .navigationBarTitle("")
+                        .navigationBarTitle("")
                         .tag(1)
                         
                 
@@ -73,7 +61,7 @@ struct BottomTabBarView: View{
                             Text(self.tabs[2].tittle)
                         }
                         .navigationBarHidden(true)
-//                        .navigationBarTitle("")
+                        .navigationBarTitle("")
                         .tag(2)
             }
         }
@@ -86,7 +74,6 @@ struct IndexView: View {
     
     var body: some View {
         VStack{
-            HeaderNavBarView()
             BottomTabBarView()
         }
     }

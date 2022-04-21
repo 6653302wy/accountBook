@@ -7,6 +7,31 @@
 
 import Foundation
 
+// 记账类型
+enum BillTypeEnum: Int {
+    // 支出
+    case EXPEND = 1
+    // 收入
+    case INCOME = 2
+    // 转账
+    case TRANSFER = 3
+    // 还款
+    case REPAYMENT = 4
+}
+
+func BillTypeDisplayName(type: BillTypeEnum) -> String{
+    switch type {
+    case BillTypeEnum.EXPEND:
+        return "支出"
+    case BillTypeEnum.INCOME:
+        return "收入"
+    case BillTypeEnum.TRANSFER:
+        return "转账"
+    case BillTypeEnum.REPAYMENT:
+        return "还款"
+    }
+}
+
 // 账单明细
 struct BillStruct: Identifiable{
     // 记账类型
@@ -23,7 +48,7 @@ struct BillStruct: Identifiable{
 
 // 日账单信息
 struct DailyBillStruct: Identifiable{
-    var date: Date
+    var date: Double
     // 日期描述: 今天 | 昨天 | 前天 | 星期x
     var dateDes: String
     var expend: Int

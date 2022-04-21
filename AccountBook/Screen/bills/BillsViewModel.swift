@@ -8,12 +8,13 @@
 import Foundation
 
 // 账单列表数据
-final class BillList {
+class BillList {
     var list: [DailyBillStruct] = []
+    
     init() {
         // 临时测试数据
         for _ in 1...12 {
-            self.list.append(DailyBillStruct(date: Date(), dateDes: "今天", expend: 299, income: 0, bills: self.createTempBillDetailInfos()))
+            self.list.append(DailyBillStruct(date: Date().timeIntervalSince1970, dateDes: "今天", expend: 299, income: 0, bills: self.createTempBillDetailInfos()))
         }
     }
     

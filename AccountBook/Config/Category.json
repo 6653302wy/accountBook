@@ -1,13 +1,4 @@
 {
-    "types": [{
-            "type": 1,
-            "tittle": "支出"
-        },
-        {
-            "type": 2,
-            "tittle": "收入"
-        }
-    ],
     "list": [{
             "type": 1,
             "name": "三餐",

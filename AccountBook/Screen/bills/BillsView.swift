@@ -7,6 +7,16 @@
 
 import SwiftUI
 
+// 顶部header bar
+struct HeaderNavBarView: View{
+    var body: some View {
+        HStack{
+            Image("menu").padding(.leading, 20)
+            Spacer()
+            Image("chart").padding(.trailing, 20)
+        }
+    }
+}
 
 
 // 月结余模块（点击进入图表页）
@@ -148,16 +158,20 @@ struct BillListView: View{
 
 struct BillsView: View {
     var body: some View {
-        ScrollView{
-            LazyVStack{
-                MonthOverView()
-                BudgetView()
-                BillListView()
+        VStack{
+            HeaderNavBarView()
+            ScrollView{
+                LazyVStack{
+                    MonthOverView()
+                    BudgetView()
+                    BillListView()
+                }
             }
+            .padding([.top, .bottom], 10)
+            .background(Color(UIColor.hex(bgColor)))
+    //        .background(Color.gray.edgesIgnoringSafeArea(.all))
         }
-        .padding([.top, .bottom], 10)
-        .background(Color(UIColor.hex(bgColor)))
-//        .background(Color.gray.edgesIgnoringSafeArea(.all))
+        
     }
 }
 

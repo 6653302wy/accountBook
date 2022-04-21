@@ -14,25 +14,16 @@ let textGray = "#666"
 let textLightGray = "#999"
 let bgColor = "#f6f6f6"
 
-// 记账类型
-enum BillTypeEnum: String {
-    // 支出
-    case EXPEND = "支出"
-    // 收入
-    case INCOME = "收入"
-    // 转账
-    case TRANSFER = "转账"
-    // 还款
-    case REPAYMENT = "还款"
-}
 
 
-// 账单分类子分类信息
+/// 分类信息
+///
+// 分类子分类信息
 struct BillSubCategory {
     var name: String
     var icon: String
 }
-// 账单分类信息
+// 分类信息
 struct BillCategory {
     var type: BillTypeEnum
     var name: String
