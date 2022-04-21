@@ -14,13 +14,11 @@ class AccountViewModel: ObservableObject {
     @Published var showAssetsNumber: Bool
     // 按分类的账户列表数据
     @Published var list: [AccountCategoryListStruct]
-    
+    // 账户分类静态数据
+    @Published var accountStaticList: [AccountJsonModel]
     
     // 所有账户列表
     private var allAccountList: [AccountDetailStruct]
-    // 账户分类静态数据
-    private var accountStaticList: [AccountStruct]
-
     
     init() {
         // 属性需要先初始化才能使用
@@ -30,7 +28,7 @@ class AccountViewModel: ObservableObject {
         self.allAccountList = []
         self.accountStaticList = []
         
-        loadData()
+        parseLocalData()
         parseAssetsInfo()
         parseAccountList()
     }
@@ -81,28 +79,35 @@ class AccountViewModel: ObservableObject {
 
     }
         
-    func getLocalAccountInfo(cate: Int, type: Int) -> AccountStruct {
-        var targetItem:AccountStruct? = nil
-        
-        for item in self.accountStaticList {
-            if item.category == cate && item.type == type{
-                targetItem = item
-                break
-            }
+    // 获取json配置信息
+//    func getLocalAccountInfo(cate: Int, type: Int) -> AccountStruct {
+//        var targetItem:AccountStruct? = nil
+//
+//        for item in self.accountStaticList {
+//            if item.category == cate && item.type == type{
+//                targetItem = item
+//                break
+//            }
+//        }
+//
+//        return targetItem!
+//    }
+    
+
+    // 解析本地json文件
+    func parseLocalData() {
+        let jsonUrl = Bundle.main.url(forResource: "accountsCategory", withExtension: "json")
+        do {
+            let jsonData = try Data(contentsOf: jsonUrl!)
+            let jsonDecoder = JSONDecoder()
+            let modules = try jsonDecoder.decode([AccountJsonModel].self, from: jsonData)
+            self.accountStaticList = modules
+//            print("parse local data \(self.accountStaticList)")
+        }
+        catch {
+            print("Couldn't parse local data")
         }
         
-        return targetItem!
     }
     
-    func loadData() {
-        guard let path = Bundle.main.path(forResource: "AccountType", ofType: "json") else { return }
-        let localData = NSData.init(contentsOfFile: path)! as Data
-        do {
-            let list = try JSONDecoder().decode(AccountJsonModel.self, from: localData)
-            self.accountStaticList = list.list
-            print("json 数据： \(self.accountStaticList)")
-          } catch {
-              debugPrint("banner===ERROR")
-        }
-    }
 }

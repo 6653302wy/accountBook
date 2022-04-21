@@ -13,14 +13,16 @@
 		5524A577280EC05D009AD7B3 /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A576280EC05D009AD7B3 /* AccountModel.swift */; };
 		5524A579280EC5CE009AD7B3 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A578280EC5CE009AD7B3 /* AccountViewModel.swift */; };
 		5524A57B280EC6C0009AD7B3 /* DateTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A57A280EC6C0009AD7B3 /* DateTools.swift */; };
-		5524A57D280FECE3009AD7B3 /* Banks.json in Sources */ = {isa = PBXBuildFile; fileRef = 5524A57C280FECE3009AD7B3 /* Banks.json */; };
+		5524A57D280FECE3009AD7B3 /* banks.json in Sources */ = {isa = PBXBuildFile; fileRef = 5524A57C280FECE3009AD7B3 /* banks.json */; };
 		5524A57F28101361009AD7B3 /* NumberTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A57E28101361009AD7B3 /* NumberTools.swift */; };
 		5524A58128101D46009AD7B3 /* StringTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A58028101D46009AD7B3 /* StringTools.swift */; };
+		5524A5832811484E009AD7B3 /* LocalDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A5822811484E009AD7B3 /* LocalDataParser.swift */; };
+		5524A58628114B1E009AD7B3 /* accountsCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 5524A58528114B1E009AD7B3 /* accountsCategory.json */; };
 		555EF9ED2807B8C3003AB5B9 /* AccountBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EF9EC2807B8C3003AB5B9 /* AccountBookApp.swift */; };
 		555EF9EF2807B8C3003AB5B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EF9EE2807B8C3003AB5B9 /* ContentView.swift */; };
 		555EF9F12807B8C4003AB5B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555EF9F02807B8C4003AB5B9 /* Assets.xcassets */; };
 		555EF9F42807B8C4003AB5B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555EF9F32807B8C4003AB5B9 /* Preview Assets.xcassets */; };
-		559FB5CA28083D6600969807 /* Category.json in Resources */ = {isa = PBXBuildFile; fileRef = 559FB5C928083D6600969807 /* Category.json */; };
+		559FB5CA28083D6600969807 /* billcategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 559FB5C928083D6600969807 /* billcategory.json */; };
 		559FB5D0280BEFF100969807 /* IndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559FB5CF280BEFF100969807 /* IndexView.swift */; };
 		55B5DA98280D834F009ADBFC /* UIColorTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B5DA97280D834F009ADBFC /* UIColorTools.swift */; };
 		55B5DA9C280D8DD8009ADBFC /* AccountsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B5DA9B280D8DD8009ADBFC /* AccountsView.swift */; };
@@ -36,16 +38,17 @@
 		5524A576280EC05D009AD7B3 /* AccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModel.swift; sourceTree = "<group>"; };
 		5524A578280EC5CE009AD7B3 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 		5524A57A280EC6C0009AD7B3 /* DateTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTools.swift; sourceTree = "<group>"; };
-		5524A57C280FECE3009AD7B3 /* Banks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Banks.json; sourceTree = "<group>"; };
+		5524A57C280FECE3009AD7B3 /* banks.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = banks.json; sourceTree = "<group>"; };
 		5524A57E28101361009AD7B3 /* NumberTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTools.swift; sourceTree = "<group>"; };
 		5524A58028101D46009AD7B3 /* StringTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTools.swift; sourceTree = "<group>"; };
+		5524A5822811484E009AD7B3 /* LocalDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataParser.swift; sourceTree = "<group>"; };
+		5524A58528114B1E009AD7B3 /* accountsCategory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = accountsCategory.json; sourceTree = "<group>"; };
 		555EF9E92807B8C3003AB5B9 /* AccountBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555EF9EC2807B8C3003AB5B9 /* AccountBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBookApp.swift; sourceTree = "<group>"; };
 		555EF9EE2807B8C3003AB5B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		555EF9F02807B8C4003AB5B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		555EF9F32807B8C4003AB5B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		555EF9FB280831D0003AB5B9 /* AccountType.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = AccountType.json; sourceTree = "<group>"; };
-		559FB5C928083D6600969807 /* Category.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Category.json; sourceTree = "<group>"; };
+		559FB5C928083D6600969807 /* billcategory.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = billcategory.json; sourceTree = "<group>"; };
 		559FB5CF280BEFF100969807 /* IndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexView.swift; sourceTree = "<group>"; };
 		55B5DA97280D834F009ADBFC /* UIColorTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorTools.swift; sourceTree = "<group>"; };
 		55B5DA9B280D8DD8009ADBFC /* AccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsView.swift; sourceTree = "<group>"; };
@@ -65,6 +68,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5524A58428114B05009AD7B3 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				5524A58528114B1E009AD7B3 /* accountsCategory.json */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
 		555EF9E02807B8C3003AB5B9 = {
 			isa = PBXGroup;
 			children = (
@@ -108,9 +119,8 @@
 		555EF9FA28083156003AB5B9 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				559FB5C928083D6600969807 /* Category.json */,
-				555EF9FB280831D0003AB5B9 /* AccountType.json */,
-				5524A57C280FECE3009AD7B3 /* Banks.json */,
+				559FB5C928083D6600969807 /* billcategory.json */,
+				5524A57C280FECE3009AD7B3 /* banks.json */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -141,6 +151,7 @@
 				5524A57A280EC6C0009AD7B3 /* DateTools.swift */,
 				5524A57E28101361009AD7B3 /* NumberTools.swift */,
 				5524A58028101D46009AD7B3 /* StringTools.swift */,
+				5524A5822811484E009AD7B3 /* LocalDataParser.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -172,6 +183,7 @@
 		55B5DA9A280D8DB5009ADBFC /* accounts */ = {
 			isa = PBXGroup;
 			children = (
+				5524A58428114B05009AD7B3 /* data */,
 				55B5DA9B280D8DD8009ADBFC /* AccountsView.swift */,
 				5524A576280EC05D009AD7B3 /* AccountModel.swift */,
 				5524A578280EC5CE009AD7B3 /* AccountViewModel.swift */,
@@ -256,8 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				555EF9F42807B8C4003AB5B9 /* Preview Assets.xcassets in Resources */,
-				559FB5CA28083D6600969807 /* Category.json in Resources */,
+				559FB5CA28083D6600969807 /* billcategory.json in Resources */,
 				555EF9F12807B8C4003AB5B9 /* Assets.xcassets in Resources */,
+				5524A58628114B1E009AD7B3 /* accountsCategory.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,6 +281,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5524A5832811484E009AD7B3 /* LocalDataParser.swift in Sources */,
 				5524A573280E8589009AD7B3 /* BillsModel.swift in Sources */,
 				55B5DA9E280D8E13009ADBFC /* BookingView.swift in Sources */,
 				55B5DA9C280D8DD8009ADBFC /* AccountsView.swift in Sources */,
@@ -282,7 +296,7 @@
 				555EF9ED2807B8C3003AB5B9 /* AccountBookApp.swift in Sources */,
 				55B5DAA1280D8E78009ADBFC /* BillsView.swift in Sources */,
 				5524A57B280EC6C0009AD7B3 /* DateTools.swift in Sources */,
-				5524A57D280FECE3009AD7B3 /* Banks.json in Sources */,
+				5524A57D280FECE3009AD7B3 /* banks.json in Sources */,
 				5524A579280EC5CE009AD7B3 /* AccountViewModel.swift in Sources */,
 				5524A575280E8710009AD7B3 /* BillsViewModel.swift in Sources */,
 			);

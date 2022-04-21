@@ -65,9 +65,11 @@ struct AccountStruct: Codable{
 }
 
 struct AccountJsonModel: Codable {
+    // 账户分类
+    var category: Int
+    // 分类列表
     var list: [AccountStruct]
 }
-
 
 // 账户信息
 struct AccountDetailStruct: Identifiable{
