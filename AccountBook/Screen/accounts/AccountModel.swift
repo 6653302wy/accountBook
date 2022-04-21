@@ -52,8 +52,9 @@ func AccountCategoryDisplayName(cate: AccountCategoryEnum) -> String{
 }
 
 
-// 账户基本信息
-struct AccountStruct: Codable{
+// 本地账户分类json数据module: 账户基本信息
+struct AccountStruct:Identifiable, Codable{
+    var id: Int
     // 账户分类
     var category: Int
     // 账户类型
@@ -62,13 +63,18 @@ struct AccountStruct: Codable{
     var name: String
     // 图标
     var icon: String
+    
 }
-
-struct AccountJsonModel: Codable {
+// 本地账户分类json数据module
+struct AccountJsonModel:Identifiable,  Codable {
+    var id: Int
     // 账户分类
     var category: Int
+    // 账户分类名称
+    var tittle: String
     // 分类列表
     var list: [AccountStruct]
+    
 }
 
 // 账户信息

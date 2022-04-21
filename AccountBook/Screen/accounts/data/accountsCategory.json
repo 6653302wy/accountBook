@@ -1,43 +1,51 @@
 [{
+        "id": 1,
         "category": 1,
         "tittle": "资金账户",
         "list": [{
+                "id": 1,
                 "category": 1,
                 "type": 1,
                 "name": "现金",
                 "icon": "cash"
             },
             {
+                "id": 2,
                 "category": 1,
                 "type": 2,
                 "name": "银行卡",
                 "icon": "bank"
             },
             {
+                "id": 3,
                 "category": 1,
                 "type": 3,
                 "name": "微信",
                 "icon": "wechat"
             },
             {
+                "id": 4,
                 "category": 1,
                 "type": 4,
                 "name": "支付宝",
                 "icon": "alipay"
             },
             {
+                "id": 5,
                 "category": 1,
                 "type": 5,
                 "name": "公积金",
                 "icon": "accumulation"
             },
             {
+                "id": 6,
                 "category": 1,
                 "type": 6,
                 "name": "社保",
                 "icon": "social"
             },
             {
+                "id": 7,
                 "category": 1,
                 "type": 7,
                 "name": "其他现金账户",
@@ -46,27 +54,32 @@
         ]
     },
     {
+        "id": 2,
         "category": 2,
         "tittle": "信用卡账户",
         "list": [{
+                "id": 1,
                 "category": 2,
                 "type": 1,
                 "name": "信用卡",
                 "icon": "credit"
             },
             {
+                "id": 2,
                 "category": 2,
                 "type": 2,
                 "name": "蚂蚁花呗",
                 "icon": "huabei"
             },
             {
+                "id": 3,
                 "category": 2,
                 "type": 3,
                 "name": "京东白条",
                 "icon": "jd"
             },
             {
+                "id": 4,
                 "category": 2,
                 "type": 4,
                 "name": "其他信用账户",
@@ -75,27 +88,32 @@
         ]
     },
     {
+        "id": 3,
         "category": 3,
         "tittle": "充值账户",
         "list": [{
+                "id": 1,
                 "category": 3,
                 "type": 1,
                 "name": "公交卡",
                 "icon": "bus"
             },
             {
+                "id": 2,
                 "category": 3,
                 "type": 2,
                 "name": "饭卡",
                 "icon": "meal"
             },
             {
+                "id": 3,
                 "category": 3,
                 "type": 3,
                 "name": "会员卡",
                 "icon": "member"
             },
             {
+                "id": 4,
                 "category": 3,
                 "type": 4,
                 "name": "其他充值账户",
@@ -104,21 +122,25 @@
         ]
     },
     {
+        "id": 4,
         "category": 4,
         "tittle": "投资账户",
         "list": [{
+                "id": 1,
                 "category": 4,
                 "type": 1,
                 "name": "股票",
                 "icon": "stocks"
             },
             {
+                "id": 2,
                 "category": 4,
                 "type": 2,
                 "name": "基金",
                 "icon": "funds"
             },
             {
+                "id": 3,
                 "category": 4,
                 "type": 3,
                 "name": "其他投资账户",

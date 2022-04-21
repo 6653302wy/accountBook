@@ -9,6 +9,9 @@ import SwiftUI
 
 // 顶部header bar
 struct HeaderBarView: View{
+    @EnvironmentObject var accountData: AccountViewModel
+    @State private var showAddAccountSheet: Bool = false
+    
     var body: some View {
         HStack{
             Image("menu").padding(.leading, 20)
@@ -17,7 +20,19 @@ struct HeaderBarView: View{
                 .font(.system(size: 20))
                 .fontWeight(.bold)
             Spacer()
-            Image("addRect").padding(.trailing, 20)
+            Button(action: {
+                self.showAddAccountSheet.toggle()
+            }) {
+                Image("addRect").padding(.trailing, 20)
+            }.sheet(isPresented: $showAddAccountSheet, content: {
+                VStack{
+                    AccountSheetView(data: self.$accountData.accountStaticList)
+                }
+                // 撑满全屏
+                .frame(minWidth: 0, idealWidth:100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .center)
+                .background(Color.white)
+            })
+
         }
     }
 }
@@ -244,8 +259,8 @@ struct AccountsView: View {
             }
             .padding([.top, .bottom], 10)
             .background(Color(UIColor.hex(bgColor)))
-            .environmentObject(data)
         }
+        .environmentObject(data)
     }
 }
 

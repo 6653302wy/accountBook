@@ -18,6 +18,7 @@
 		5524A58128101D46009AD7B3 /* StringTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A58028101D46009AD7B3 /* StringTools.swift */; };
 		5524A5832811484E009AD7B3 /* LocalDataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A5822811484E009AD7B3 /* LocalDataParser.swift */; };
 		5524A58628114B1E009AD7B3 /* accountsCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 5524A58528114B1E009AD7B3 /* accountsCategory.json */; };
+		5524A5882811566E009AD7B3 /* AccountSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A5872811566E009AD7B3 /* AccountSheetView.swift */; };
 		555EF9ED2807B8C3003AB5B9 /* AccountBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EF9EC2807B8C3003AB5B9 /* AccountBookApp.swift */; };
 		555EF9EF2807B8C3003AB5B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EF9EE2807B8C3003AB5B9 /* ContentView.swift */; };
 		555EF9F12807B8C4003AB5B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555EF9F02807B8C4003AB5B9 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		5524A58028101D46009AD7B3 /* StringTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringTools.swift; sourceTree = "<group>"; };
 		5524A5822811484E009AD7B3 /* LocalDataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataParser.swift; sourceTree = "<group>"; };
 		5524A58528114B1E009AD7B3 /* accountsCategory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = accountsCategory.json; sourceTree = "<group>"; };
+		5524A5872811566E009AD7B3 /* AccountSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSheetView.swift; sourceTree = "<group>"; };
 		555EF9E92807B8C3003AB5B9 /* AccountBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555EF9EC2807B8C3003AB5B9 /* AccountBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBookApp.swift; sourceTree = "<group>"; };
 		555EF9EE2807B8C3003AB5B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -187,6 +189,7 @@
 				55B5DA9B280D8DD8009ADBFC /* AccountsView.swift */,
 				5524A576280EC05D009AD7B3 /* AccountModel.swift */,
 				5524A578280EC5CE009AD7B3 /* AccountViewModel.swift */,
+				5524A5872811566E009AD7B3 /* AccountSheetView.swift */,
 			);
 			path = accounts;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5524A5882811566E009AD7B3 /* AccountSheetView.swift in Sources */,
 				5524A5832811484E009AD7B3 /* LocalDataParser.swift in Sources */,
 				5524A573280E8589009AD7B3 /* BillsModel.swift in Sources */,
 				55B5DA9E280D8E13009ADBFC /* BookingView.swift in Sources */,
