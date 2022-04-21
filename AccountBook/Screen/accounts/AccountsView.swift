@@ -22,15 +22,35 @@ struct HeaderBarView: View{
     }
 }
 
+let structSpace: CGFloat = 165
+
+func showAssetsText(_ amount: Double, showAseets: Bool) -> String {
+    return showAseets ? moneyFormat(amount) : "*****"
+}
+
 // 总资产块
 struct AssetsView: View{
+    @EnvironmentObject var accountData: AccountViewModel
+    @State private var showAseets: Bool = true
+    
     var body: some View {
         VStack{
             VStack{
-                Text("净资产")
-                    .font(.system(size: 15))
-                    .foregroundColor(Color(UIColor.hex(textGray)))
-                Text("23989.78")
+                HStack {
+                    Text("净资产")
+                        .font(.system(size: 15))
+                        .foregroundColor(Color(UIColor.hex(textGray)))
+                        .padding(.leading, 50)
+                    Image(showAseets ? "eyeClose" : "eyeOpen")
+                        .onTapGesture {
+                            showAseets.toggle()
+                            self.accountData.showAssetsNumber.toggle()
+                            showAseets = self.accountData.showAssetsNumber
+                        }
+                        .padding(.leading, 20)
+                }
+                
+                Text(showAssetsText(self.accountData.assetsInfo.netAssets, showAseets: showAseets))
                     .font(.system(size: 22))
                     .fontWeight(.bold)
             }
@@ -41,11 +61,13 @@ struct AssetsView: View{
                     Text("总资产")
                         .font(.system(size: 15))
                         .foregroundColor(Color(UIColor.hex(textGray)))
-                    Text("34232.78")
+                        .padding(.top, 10)
+                    Text(showAssetsText(self.accountData.assetsInfo.totalAmount, showAseets: self.accountData.showAssetsNumber))
                         .font(.system(size: 20))
                         .fontWeight(.bold)
+                        .padding(.bottom, 10)
+                        .frame(width: structSpace)
                 }
-                .padding(.leading, 40)
                 
                 Spacer()
                 
@@ -53,11 +75,14 @@ struct AssetsView: View{
                     Text("总负债")
                         .font(.system(size: 15))
                         .foregroundColor(Color(UIColor.hex(textGray)))
-                    Text("13989.78")
+                        .padding(.top, 10)
+                    Text(showAssetsText(self.accountData.assetsInfo.totalCreditAmount, showAseets: self.accountData.showAssetsNumber))
                         .font(.system(size: 20))
                         .fontWeight(.bold)
+                        .padding(.bottom, 10)
+                        .frame(width: structSpace)
+
                 }
-                .padding(.trailing, 40)
             }
             .frame(width: 350)
         }
@@ -70,7 +95,7 @@ struct AssetsView: View{
 
 // 借入 借出模块
 struct DebtView: View {
-    @State private var structSpace: CGFloat = 165
+    @EnvironmentObject var accountData: AccountViewModel
     
     var body: some View {
         HStack{
@@ -79,12 +104,12 @@ struct DebtView: View {
                 Text("总借入")
                     .font(.system(size: 15))
                     .foregroundColor(Color(UIColor.hex(textGray)))
-                    .frame(width: self.structSpace)
+                    .frame(width: structSpace)
                     .padding(.top, 10)
-                Text("129.78")
+                Text(showAssetsText(self.accountData.assetsInfo.DebtAmount, showAseets: self.accountData.showAssetsNumber))
                     .font(.system(size: 20))
                     .fontWeight(.bold)
-                    .frame(width: self.structSpace)
+                    .frame(width: structSpace)
                     .padding(.bottom, 10)
             }
             .background(Color.white)
@@ -98,10 +123,10 @@ struct DebtView: View {
                     .foregroundColor(Color(UIColor.hex(textGray)))
                     .padding(.top, 10)
                 
-                Text("88.78")
+                Text(showAssetsText(self.accountData.assetsInfo.loanAmount, showAseets: self.accountData.showAssetsNumber))
                     .font(.system(size: 20))
                     .fontWeight(.bold)
-                    .frame(width: 165)
+                    .frame(width: structSpace)
                     .padding(.bottom, 10)
             }
             .background(Color.white)

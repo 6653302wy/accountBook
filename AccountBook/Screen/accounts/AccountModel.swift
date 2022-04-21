@@ -7,6 +7,22 @@
 
 import Foundation
 
+// 资产信息
+struct AssetsStruct {
+    // 总资产
+    var totalAmount: Double
+    // 总负债(信用卡账户的欠款总和)
+    var totalCreditAmount: Double
+    // 净资产
+    var netAssets: Double
+    // 总借入(与他人/机构的债务)
+    var DebtAmount: Double
+    // 总借出(与他人/机构的债务)
+    var loanAmount: Double
+    // 债务是否计入资产
+    var isDebtLoanCounting: Bool?
+}
+
 // 资产大类型
 enum AccountCategoryEnum: Int {
     case UNDEFINED = 0
