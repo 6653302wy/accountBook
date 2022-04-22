@@ -11,6 +11,7 @@ import SwiftUI
 struct HeaderBarView: View{
     @EnvironmentObject var accountData: AccountViewModel
     @State private var showAddAccountSheet: Bool = false
+    @State private var addAccount = false
     
     var body: some View {
         HStack{
@@ -25,14 +26,14 @@ struct HeaderBarView: View{
             }) {
                 Image("addRect").padding(.trailing, 20)
             }.sheet(isPresented: $showAddAccountSheet, content: {
-                VStack{
-                    AccountSheetView(data: self.$accountData.accountStaticList)
-                }
+                AccountSheetView(data: self.$accountData.accountStaticList)
+                    .onAppear{
+                        self.accountData.addNewAccount(acc: AccountDetailStruct(category: 1, type: 1, customTittle: "新的账户", balance: 23487.11))
+                    }
                 // 撑满全屏
                 .frame(minWidth: 0, idealWidth:100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .center)
                 .background(Color.white)
             })
-
         }
     }
 }
@@ -157,7 +158,7 @@ struct DebtView: View {
 // 账户大类型列表模块
 struct AccountTypeListView: View {
     @Binding private var accountCateInfo: AccountCategoryListStruct
-    @State private var opened:Bool = false
+    @State private var showList:Bool = false
     
     init(info: Binding<AccountCategoryListStruct>){
         self._accountCateInfo = info
@@ -177,52 +178,53 @@ struct AccountTypeListView: View {
                     .bold()
                     .font(.system(size: 18))
                 
-                Image(self.opened ? "arrowD" : "arrowR")
+                Image(self.showList ? "arrowD" : "arrowR")
             }
             .padding(EdgeInsets(top: 10, leading: 0, bottom: -1, trailing: 0))
             .onTapGesture {
-                self.opened.toggle()
+                self.showList.toggle()
             }
             
-            ForEach(accountCateInfo.list) { item in
-                Divider()
-                
-                if item.category == AccountCategoryEnum.CREDIT.rawValue {
-                    HStack {
-                        Image("bank")
-                        VStack {
-                            HStack {
-                                Text(item.customTittle)
-                                Spacer()
-                                Text("\(moneyFormat(item.balance))")
-                            }
-                            ProgressView(value: 0.45)
-                            HStack {
-                                Text("\(3)天后还款")
-                                    .font(.system(size: 15))
-                                    .foregroundColor(Color(UIColor.lightGray))
-                                
-                                Spacer()
-                                
-                                Text("可用\(moneyFormat(item.totalLimit ?? 0 - item.balance))")
-                                    .font(.system(size: 15))
-                                    .foregroundColor(Color(UIColor.lightGray))
+            if showList {
+                ForEach(accountCateInfo.list) { item in
+                    Divider()
+                    
+                    if item.category == AccountCategoryEnum.CREDIT.rawValue {
+                        HStack {
+                            Image("bank")
+                            VStack {
+                                HStack {
+                                    Text(item.customTittle)
+                                    Spacer()
+                                    Text("\(moneyFormat(item.balance))")
+                                }
+                                ProgressView(value: 0.45)
+                                HStack {
+                                    Text("\(3)天后还款")
+                                        .font(.system(size: 15))
+                                        .foregroundColor(Color(UIColor.lightGray))
+                                    
+                                    Spacer()
+                                    
+                                    Text("可用\(moneyFormat(item.totalLimit ?? 0 - item.balance))")
+                                        .font(.system(size: 15))
+                                        .foregroundColor(Color(UIColor.lightGray))
 
+                                }
                             }
                         }
+                        .frame(width: 330)
+                    } else {
+                        HStack {
+                            Image("bank")
+                            Text(item.customTittle)
+                            Spacer()
+                            Text("\(moneyFormat(item.balance))")
+                        }
+                        .frame(width: 330)
+                        .padding([.top, .bottom], 8)
                     }
-                    .frame(width: 330)
-                } else {
-                    HStack {
-                        Image("bank")
-                        Text(item.customTittle)
-                        Spacer()
-                        Text("\(moneyFormat(item.balance))")
-                    }
-                    .frame(width: 330)
-                    .padding([.top, .bottom], 8)
                 }
-                
             }
         }
         .padding(.bottom, 10)

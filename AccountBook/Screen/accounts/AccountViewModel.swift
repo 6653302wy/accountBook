@@ -33,6 +33,12 @@ class AccountViewModel: ObservableObject {
         parseAccountList()
     }
     
+    func addNewAccount(acc: AccountDetailStruct) {
+        print("添加一个新账户 \(acc)" )
+        self.allAccountList.append(acc)
+        parseCategoryList()
+    }
+    
     func parseAssetsInfo(){
         // 临时测试数据
         self.assetsInfo = AssetsStruct(totalAmount: 29898.23, totalCreditAmount: 8989.34, netAssets: 22342.02, DebtAmount: 8000, loanAmount: 10000, isDebtLoanCounting: false)
@@ -41,11 +47,17 @@ class AccountViewModel: ObservableObject {
     // 解析账户列表
     func parseAccountList(){
         // 获取所有账户数据  创建测试数据
-        for i in 1...12 {
+        for i in 1...1 {
             self.allAccountList.append(AccountDetailStruct(category: Int(arc4random()) % 4 + 1, type: Int(arc4random()) % 4 + 1, customTittle: "账户\(i)", balance: Double(arc4random() % 20000) + 1,  deadLineDate: 28))
         }
                 
         // 将所有账户列表分类成按类型分类的数据
+        parseCategoryList()
+    }
+    
+    func parseCategoryList(){
+        self.list = []
+        
         var categoryList: [Int] = []
         var cateListInfo: AccountCategoryListStruct? = nil
         for item in self.allAccountList {
@@ -78,21 +90,6 @@ class AccountViewModel: ObservableObject {
         return index
 
     }
-        
-    // 获取json配置信息
-//    func getLocalAccountInfo(cate: Int, type: Int) -> AccountStruct {
-//        var targetItem:AccountStruct? = nil
-//
-//        for item in self.accountStaticList {
-//            if item.category == cate && item.type == type{
-//                targetItem = item
-//                break
-//            }
-//        }
-//
-//        return targetItem!
-//    }
-    
 
     // 解析本地json文件
     func parseLocalData() {
