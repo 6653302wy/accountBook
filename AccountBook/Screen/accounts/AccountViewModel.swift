@@ -41,8 +41,7 @@ class AccountViewModel: ObservableObject {
         self.showAddCountSheet = false
         
         parseLocalData()
-        parseAssetsInfo()
-        parseAccountList()
+        getAccountList()
     }
     
     func setCurChoosenAccount(category: Int = AccountCategoryEnum.UNDEFINED.rawValue, type: Int = 0, icon: String = "", name: String = "") {
@@ -67,29 +66,32 @@ class AccountViewModel: ObservableObject {
         self.allAccountList.append(self.curNewAccountInfo)
         parseCategoryList()
         
-        print("添加一个新账户 \(self.curNewAccountInfo)" )
+//        print("添加一个新账户 \(self.curNewAccountInfo)" )
         
         showAddCountSheet.toggle()
     }
     
+    func clearDatas() {
+        assetsInfo.totalAmount = 0
+        assetsInfo.totalCreditAmount = 0
+        
+        self.list = []
+    }
+    
     func parseAssetsInfo(){
-        // 临时测试数据
-        self.assetsInfo = AssetsStruct(totalAmount: 29898.23, totalCreditAmount: 8989.34, netAssets: 22342.02, DebtAmount: 8000, loanAmount: 10000, isDebtLoanCounting: false)
+        assetsInfo.netAssets = assetsInfo.totalAmount - assetsInfo.totalCreditAmount
     }
     
     // 解析账户列表
-    func parseAccountList(){
-        // 获取所有账户数据  创建测试数据
-//        for i in 1...1 {
-//            self.allAccountList.append(AccountDetailStruct(category: Int(arc4random()) % 4 + 1, type: Int(arc4random()) % 4 + 1, icon: "bank", name: "账户\(i)", desc: "描述", balance: Double(arc4random() % 20000) + 1,  deadLineDate: 28))
-//        }
+    func getAccountList(){
+        // 获取所有账户数据
                 
         // 将所有账户列表分类成按类型分类的数据
         parseCategoryList()
     }
     
     func parseCategoryList(){
-        self.list = []
+        clearDatas()
         
         var categoryList: [Int] = []
         var cateListInfo: AccountCategoryListStruct? = nil
@@ -106,10 +108,25 @@ class AccountViewModel: ObservableObject {
                 cateListInfo = AccountCategoryListStruct(category: item.category, totalAmount: item.balance, isSplitList: curNewAccountInfo.category == item.category,list: [item])
                 self.list.append(cateListInfo!)
             }
+            
+            // 计算资产信息
+            let amount = abs(cateListInfo?.totalAmount ?? 0)
+            // 信用卡账户，计算欠债总额
+            if cateListInfo?.category == AccountCategoryEnum.CREDIT.rawValue {
+                assetsInfo.totalCreditAmount += amount
+            } else {
+                // 计算总资产信息
+                assetsInfo.totalAmount += amount
+            }
         }
         
         // 账户分类排序
         self.list = self.list.sorted{$0.category < $1.category}
+        
+//        // 计算总资产信息
+//        // 净资产
+//        // 总资产，总负债
+        parseAssetsInfo()
     }
     
     func getCategoryListStructIndex(cate: Int) -> Int {
