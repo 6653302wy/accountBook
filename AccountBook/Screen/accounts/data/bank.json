@@ -1,119 +1,120 @@
 {
     "list": [{
-            "type": 1,
+            "id": 1,
             "name": "农业银行",
             "icon": "abc"
         },
         {
-            "type": 2,
+            "id": 2,
             "name": "北京银行",
             "icon": "bob"
         },
         {
-            "type": 3,
+            "id": 3,
             "name": "中国银行",
             "icon": "boc"
         },
         {
-            "type": 4,
+            "id": 4,
             "name": "渤海银行",
             "icon": "bohaib"
         },
         {
-            "type": 5,
+            "id": 5,
             "name": "建设银行",
             "icon": "ccb"
         },
         {
-            "type": 6,
+            "id": 6,
             "name": "兴业银行",
             "icon": "cib"
         },
         {
-            "type": 7,
+            "id": 7,
             "name": "光大银行",
             "icon": "ceb"
         },
         {
-            "type": 8,
+            "id": 8,
             "name": "中信银行",
             "icon": "citic"
         },
         {
-            "type": 9,
+            "id": 9,
             "name": "招商银行",
             "icon": "cmb"
         },
         {
-            "type": 10,
+            "id": 10,
             "name": "民生银行",
             "icon": "cme"
         },
         {
-            "type": 11,
+            "id": 11,
             "name": "交通银行",
             "icon": "comm"
         },
         {
-            "type": 12,
+            "id": 12,
             "name": "广发银行",
             "icon": "gdb"
         },
         {
-            "type": 13,
+            "id": 13,
             "name": "东亚银行",
             "icon": "hkbea"
         },
         {
-            "type": 14,
+            "id": 14,
             "name": "恒生银行",
             "icon": "hs"
         },
         {
-            "type": 15,
+            "id": 15,
             "name": "汇丰银行（中国）",
             "icon": "hsbc"
         },
         {
-            "type": 16,
+            "id": 16,
             "name": "华夏银行",
             "icon": "hxb"
         },
         {
-            "type": 17,
+            "id": 17,
             "name": "工商银行",
             "icon": "icbc"
         },
         {
-            "type": 18,
+            "id": 18,
             "name": "南洋商业银行",
             "icon": "ncb"
         },
         {
-            "type": 19,
+            "id": 19,
             "name": "邮储银行",
             "icon": "psbc"
         },
         {
-            "type": 20,
+            "id": 20,
             "name": "平安银行",
             "icon": "spab"
         },
         {
-            "type": 21,
+            "id": 21,
             "name": "浦发银行",
             "icon": "spdb"
         },
         {
-            "type": 22,
+            "id": 22,
             "name": "深圳前海",
             "icon": "szqh"
         },
         {
-            "type": 23,
+            "id": 23,
             "name": "浙商银行",
             "icon": "zjsy"
         }
     ]
 }
+
 

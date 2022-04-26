@@ -20,6 +20,8 @@
 		5524A58628114B1E009AD7B3 /* accountsCategory.json in Resources */ = {isa = PBXBuildFile; fileRef = 5524A58528114B1E009AD7B3 /* accountsCategory.json */; };
 		5524A5882811566E009AD7B3 /* AccountSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A5872811566E009AD7B3 /* AccountSheetView.swift */; };
 		5524A58A2812739E009AD7B3 /* AddNewAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5524A5892812739E009AD7B3 /* AddNewAccountView.swift */; };
+		553AACB72813CE480088051B /* ChooseBankSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553AACB62813CE480088051B /* ChooseBankSheetView.swift */; };
+		553AACB92813D4AE0088051B /* bank.json in Resources */ = {isa = PBXBuildFile; fileRef = 553AACB82813D4AE0088051B /* bank.json */; };
 		555EF9ED2807B8C3003AB5B9 /* AccountBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EF9EC2807B8C3003AB5B9 /* AccountBookApp.swift */; };
 		555EF9EF2807B8C3003AB5B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EF9EE2807B8C3003AB5B9 /* ContentView.swift */; };
 		555EF9F12807B8C4003AB5B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555EF9F02807B8C4003AB5B9 /* Assets.xcassets */; };
@@ -47,6 +49,8 @@
 		5524A58528114B1E009AD7B3 /* accountsCategory.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = accountsCategory.json; sourceTree = "<group>"; };
 		5524A5872811566E009AD7B3 /* AccountSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSheetView.swift; sourceTree = "<group>"; };
 		5524A5892812739E009AD7B3 /* AddNewAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewAccountView.swift; sourceTree = "<group>"; };
+		553AACB62813CE480088051B /* ChooseBankSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseBankSheetView.swift; sourceTree = "<group>"; };
+		553AACB82813D4AE0088051B /* bank.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bank.json; sourceTree = "<group>"; };
 		555EF9E92807B8C3003AB5B9 /* AccountBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555EF9EC2807B8C3003AB5B9 /* AccountBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBookApp.swift; sourceTree = "<group>"; };
 		555EF9EE2807B8C3003AB5B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,9 +79,21 @@
 		5524A58428114B05009AD7B3 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				5524A57C280FECE3009AD7B3 /* banks.json */,
 				5524A58528114B1E009AD7B3 /* accountsCategory.json */,
+				553AACB82813D4AE0088051B /* bank.json */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		553AACB52813C9FA0088051B /* view */ = {
+			isa = PBXGroup;
+			children = (
+				5524A5872811566E009AD7B3 /* AccountSheetView.swift */,
+				5524A5892812739E009AD7B3 /* AddNewAccountView.swift */,
+				553AACB62813CE480088051B /* ChooseBankSheetView.swift */,
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 		555EF9E02807B8C3003AB5B9 = {
@@ -124,7 +140,6 @@
 			isa = PBXGroup;
 			children = (
 				559FB5C928083D6600969807 /* billcategory.json */,
-				5524A57C280FECE3009AD7B3 /* banks.json */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -187,12 +202,11 @@
 		55B5DA9A280D8DB5009ADBFC /* accounts */ = {
 			isa = PBXGroup;
 			children = (
+				553AACB52813C9FA0088051B /* view */,
 				5524A58428114B05009AD7B3 /* data */,
-				55B5DA9B280D8DD8009ADBFC /* AccountsView.swift */,
 				5524A576280EC05D009AD7B3 /* AccountModel.swift */,
 				5524A578280EC5CE009AD7B3 /* AccountViewModel.swift */,
-				5524A5872811566E009AD7B3 /* AccountSheetView.swift */,
-				5524A5892812739E009AD7B3 /* AddNewAccountView.swift */,
+				55B5DA9B280D8DD8009ADBFC /* AccountsView.swift */,
 			);
 			path = accounts;
 			sourceTree = "<group>";
@@ -273,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				553AACB92813D4AE0088051B /* bank.json in Resources */,
 				555EF9F42807B8C4003AB5B9 /* Preview Assets.xcassets in Resources */,
 				559FB5CA28083D6600969807 /* billcategory.json in Resources */,
 				555EF9F12807B8C4003AB5B9 /* Assets.xcassets in Resources */,
@@ -289,6 +304,7 @@
 			files = (
 				5524A5882811566E009AD7B3 /* AccountSheetView.swift in Sources */,
 				5524A5832811484E009AD7B3 /* LocalDataParser.swift in Sources */,
+				553AACB72813CE480088051B /* ChooseBankSheetView.swift in Sources */,
 				5524A573280E8589009AD7B3 /* BillsModel.swift in Sources */,
 				55B5DA9E280D8E13009ADBFC /* BookingView.swift in Sources */,
 				55B5DA9C280D8DD8009ADBFC /* AccountsView.swift in Sources */,

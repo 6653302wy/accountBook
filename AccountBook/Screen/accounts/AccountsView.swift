@@ -10,7 +10,7 @@ import SwiftUI
 // 顶部header bar
 struct HeaderBarView: View{
     @EnvironmentObject var accountData: AccountViewModel
-    @State private var showAddAccountSheet: Bool = false
+//    @State private var showAddAccountSheet: Bool = false
     @State private var addAccount = false
     
     var body: some View {
@@ -22,14 +22,11 @@ struct HeaderBarView: View{
                 .fontWeight(.bold)
             Spacer()
             Button(action: {
-                self.showAddAccountSheet.toggle()
+                self.accountData.showAddCountSheet.toggle()
             }) {
                 Image("addRect").padding(.trailing, 20)
-            }.sheet(isPresented: $showAddAccountSheet, content: {
-                AccountSheetView(data: self.$accountData.accountStaticList)
-                    .onAppear{
-                        self.accountData.addNewAccount(acc: AccountDetailStruct(category: 1, type: 1, customTittle: "新的账户", balance: 23487.11))
-                    }
+            }.sheet(isPresented: self.$accountData.showAddCountSheet, content: {
+                AccountSheetView()
                 // 撑满全屏
                 .frame(minWidth: 0, idealWidth:100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .center)
                 .background(Color.white)
@@ -156,6 +153,7 @@ struct DebtView: View {
 }
 
 // 账户大类型列表模块
+let iconSize: CGFloat = 26
 struct AccountTypeListView: View {
     @Binding private var accountCateInfo: AccountCategoryListStruct
     @State private var showList:Bool = false
@@ -191,10 +189,12 @@ struct AccountTypeListView: View {
                     
                     if item.category == AccountCategoryEnum.CREDIT.rawValue {
                         HStack {
-                            Image("bank")
+                            Image(item.icon)
+                                .resizable()
+                                .frame(width: iconSize, height: iconSize)
                             VStack {
                                 HStack {
-                                    Text(item.customTittle)
+                                    Text(item.name)
                                     Spacer()
                                     Text("\(moneyFormat(item.balance))")
                                 }
@@ -216,8 +216,10 @@ struct AccountTypeListView: View {
                         .frame(width: 330)
                     } else {
                         HStack {
-                            Image("bank")
-                            Text(item.customTittle)
+                            Image(item.icon)
+                                .resizable()
+                                .frame(width: iconSize, height: iconSize)
+                            Text(item.name)
                             Spacer()
                             Text("\(moneyFormat(item.balance))")
                         }

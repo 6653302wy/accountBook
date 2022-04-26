@@ -65,7 +65,7 @@ struct AccountStruct:Identifiable, Codable{
     var icon: String
     
 }
-// 本地账户分类json数据module
+// 本地账户分类配置标配 json数据
 struct AccountJsonModel:Identifiable,  Codable {
     var id: Int
     // 账户分类
@@ -82,7 +82,9 @@ struct AccountDetailStruct: Identifiable{
     // 账户分类
     var category: Int
     var type: Int
-    var customTittle: String
+    var icon: String
+    var name: String
+    var desc: String?
     // 余额 | 欠款(信用卡账户)
     var balance: Double
     // 信用卡账户，总额度
@@ -104,3 +106,22 @@ struct AccountCategoryListStruct: Identifiable {
     // 账户列表
     var list: [AccountDetailStruct]
 }
+
+
+// 银行信息
+struct BankStruct: Identifiable, Codable {
+    var id: Int
+    var name: String
+    var icon: String
+}
+
+// 银行配置表
+struct BankListJsonModel: Codable {
+    var list: [BankStruct]
+}
+
+// 账户是否银行卡类型
+func isBankType(category: Int, type: Int) -> Bool {
+    return (category == AccountCategoryEnum.FUND.rawValue && type == 2) || (category == AccountCategoryEnum.CREDIT.rawValue && type == 1)
+}
+
