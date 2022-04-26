@@ -26,6 +26,7 @@ struct MonthOverView :View{
             HStack{
                 VStack.init(alignment: .leading){
                     Text("月结余")
+                        .font(.system(size: defaultTextSize))
                         .foregroundColor(Color.white)
                     
                     Text("19893.09")
@@ -51,9 +52,13 @@ struct MonthOverView :View{
             
             
             HStack{
-                Text("月收入：\("22398.21")").foregroundColor(Color.white)
+                Text("月收入：\("22398.21")")
+                    .font(.system(size: defaultTextSize))
+                    .foregroundColor(Color.white)
                 Spacer()
-                Text("月支出：\("1398.21")").foregroundColor(Color.white)
+                Text("月支出：\("1398.21")")
+                    .font(.system(size: defaultTextSize))
+                    .foregroundColor(Color.white)
             }
             .padding([.leading, .trailing], 20)
         }
@@ -71,12 +76,13 @@ struct BudgetView: View{
     var body: some View{
         VStack.init(alignment: .leading){
             Text("总预算：\("23412")")
-                .font(.system(size: 19))
+                .font(.system(size: tittleTextSize))
                 .padding(.bottom, -5)
             
             ProgressView(value: self.pro)
             
             Text("剩余：\("234.23")  |  剩余日均：\("202.88")")
+                .font(.system(size: defaultTextSize))
                 .foregroundColor(Color(UIColor.hex(textGray)))
         }
         .padding(10)
@@ -119,19 +125,21 @@ struct BillDetailStruct :View{
                    Image("circleGreen")
                     VStack(alignment: .leading){
                         Text(bill.category.name)
+                            .font(.system(size: defaultTextSize))
                             .fontWeight(.bold)
                             .foregroundColor(Color(UIColor.hex(textTitle)))
                         Text(bill.desc)
-                            .font(.system(size: 16))
+                            .font(.system(size: smallTextSize))
                             .foregroundColor(Color(UIColor.hex(textGray)))
                     }
                     Spacer()
                     VStack(alignment: .leading){
                         Text("-23.56")
+                            .font(.system(size: defaultTextSize))
                             .fontWeight(.bold)
                             .foregroundColor(Color(UIColor.hex(redColor)))
                         Text("微信")
-                            .font(.system(size: 16))
+                            .font(.system(size: smallTextSize))
                             .foregroundColor(Color(UIColor.hex(textGray)))
                     }
                 }

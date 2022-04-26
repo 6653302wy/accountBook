@@ -69,7 +69,7 @@ class AccountViewModel: ObservableObject {
         
         print("添加一个新账户 \(self.curNewAccountInfo)" )
         
-        showAddCountSheet = false
+        showAddCountSheet.toggle()
     }
     
     func parseAssetsInfo(){
@@ -80,9 +80,9 @@ class AccountViewModel: ObservableObject {
     // 解析账户列表
     func parseAccountList(){
         // 获取所有账户数据  创建测试数据
-        for i in 1...1 {
-            self.allAccountList.append(AccountDetailStruct(category: Int(arc4random()) % 4 + 1, type: Int(arc4random()) % 4 + 1, icon: "bank", name: "账户\(i)", desc: "描述", balance: Double(arc4random() % 20000) + 1,  deadLineDate: 28))
-        }
+//        for i in 1...1 {
+//            self.allAccountList.append(AccountDetailStruct(category: Int(arc4random()) % 4 + 1, type: Int(arc4random()) % 4 + 1, icon: "bank", name: "账户\(i)", desc: "描述", balance: Double(arc4random() % 20000) + 1,  deadLineDate: 28))
+//        }
                 
         // 将所有账户列表分类成按类型分类的数据
         parseCategoryList()
@@ -99,10 +99,11 @@ class AccountViewModel: ObservableObject {
                 cateListInfo = self.list[index]
                 cateListInfo?.totalAmount += item.balance
                 cateListInfo?.list.append(item)
+                cateListInfo?.isSplitList = curNewAccountInfo.category == item.category
                 self.list[index] = cateListInfo ?? self.list[index]
             } else {
                 categoryList.append(item.category)
-                cateListInfo = AccountCategoryListStruct(category: item.category, totalAmount: item.balance, list: [item])
+                cateListInfo = AccountCategoryListStruct(category: item.category, totalAmount: item.balance, isSplitList: curNewAccountInfo.category == item.category,list: [item])
                 self.list.append(cateListInfo!)
             }
         }

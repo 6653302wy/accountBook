@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 // 颜色相关
 let redColor = "#d81e06"
@@ -19,9 +20,12 @@ let bgColor = "#f6f6f6"
 
 
 // 字号
-let defaultTextSize = 14
-let nameTextSize = 15
-let titleTextSize = 18
+
+let smallTextSize: CGFloat = 13
+let defaultTextSize: CGFloat = 14
+let nameTextSize: CGFloat = 15
+let tittleTextSize: CGFloat = 16
+let pageTitleTextSize: CGFloat = 18
 
 
 /// 分类信息

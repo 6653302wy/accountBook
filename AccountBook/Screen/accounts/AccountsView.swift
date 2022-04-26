@@ -10,22 +10,20 @@ import SwiftUI
 // 顶部header bar
 struct HeaderBarView: View{
     @EnvironmentObject var accountData: AccountViewModel
-//    @State private var showAddAccountSheet: Bool = false
-    @State private var addAccount = false
-    
+        
     var body: some View {
         HStack{
             Image("menu").padding(.leading, 20)
             Spacer()
             Text("资产管理")
-                .font(.system(size: 20))
+                .font(.system(size: pageTitleTextSize))
                 .fontWeight(.bold)
             Spacer()
             Button(action: {
-                self.accountData.showAddCountSheet.toggle()
+                accountData.showAddCountSheet.toggle()
             }) {
                 Image("addRect").padding(.trailing, 20)
-            }.sheet(isPresented: self.$accountData.showAddCountSheet, content: {
+            }.sheet(isPresented: $accountData.showAddCountSheet, content: {
                 AccountSheetView()
                 // 撑满全屏
                 .frame(minWidth: 0, idealWidth:100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: .infinity, alignment: .center)
@@ -51,7 +49,7 @@ struct AssetsView: View{
             VStack{
                 HStack {
                     Text("净资产")
-                        .font(.system(size: 15))
+                        .font(.system(size: defaultTextSize))
                         .foregroundColor(Color(UIColor.hex(textGray)))
                         .padding(.leading, 50)
                     Image(showAseets ? "eyeClose" : "eyeOpen")
@@ -72,11 +70,11 @@ struct AssetsView: View{
             HStack{
                 VStack{
                     Text("总资产")
-                        .font(.system(size: 15))
+                        .font(.system(size: defaultTextSize))
                         .foregroundColor(Color(UIColor.hex(textGray)))
                         .padding(.top, 10)
                     Text(showAssetsText(self.accountData.assetsInfo.totalAmount, showAseets: self.accountData.showAssetsNumber))
-                        .font(.system(size: 20))
+                        .font(.system(size: pageTitleTextSize))
                         .fontWeight(.bold)
                         .padding(.bottom, 10)
                         .frame(width: structSpace)
@@ -86,11 +84,11 @@ struct AssetsView: View{
                 
                 VStack{
                     Text("总负债")
-                        .font(.system(size: 15))
+                        .font(.system(size: defaultTextSize))
                         .foregroundColor(Color(UIColor.hex(textGray)))
                         .padding(.top, 10)
                     Text(showAssetsText(self.accountData.assetsInfo.totalCreditAmount, showAseets: self.accountData.showAssetsNumber))
-                        .font(.system(size: 20))
+                        .font(.system(size: pageTitleTextSize))
                         .fontWeight(.bold)
                         .padding(.bottom, 10)
                         .frame(width: structSpace)
@@ -115,12 +113,12 @@ struct DebtView: View {
             Spacer()
             VStack{
                 Text("总借入")
-                    .font(.system(size: 15))
+                    .font(.system(size: defaultTextSize))
                     .foregroundColor(Color(UIColor.hex(textGray)))
                     .frame(width: structSpace)
                     .padding(.top, 10)
                 Text(showAssetsText(self.accountData.assetsInfo.DebtAmount, showAseets: self.accountData.showAssetsNumber))
-                    .font(.system(size: 20))
+                    .font(.system(size: pageTitleTextSize))
                     .fontWeight(.bold)
                     .frame(width: structSpace)
                     .padding(.bottom, 10)
@@ -132,12 +130,12 @@ struct DebtView: View {
             
             VStack{
                 Text("总借出")
-                    .font(.system(size: 15))
+                    .font(.system(size: defaultTextSize))
                     .foregroundColor(Color(UIColor.hex(textGray)))
                     .padding(.top, 10)
                 
                 Text(showAssetsText(self.accountData.assetsInfo.loanAmount, showAseets: self.accountData.showAssetsNumber))
-                    .font(.system(size: 20))
+                    .font(.system(size: pageTitleTextSize))
                     .fontWeight(.bold)
                     .frame(width: structSpace)
                     .padding(.bottom, 10)
@@ -156,7 +154,6 @@ struct DebtView: View {
 let iconSize: CGFloat = 26
 struct AccountTypeListView: View {
     @Binding private var accountCateInfo: AccountCategoryListStruct
-    @State private var showList:Bool = false
     
     init(info: Binding<AccountCategoryListStruct>){
         self._accountCateInfo = info
@@ -167,7 +164,8 @@ struct AccountTypeListView: View {
             HStack{
                 Text("\(AccountCategoryDisplayName(cate: AccountCategoryEnum(rawValue: self.accountCateInfo.category) ??  AccountCategoryEnum.FUND))")
                     .bold()
-                    .font(.system(size: 18))
+                    .font(.system(size: 16))
+                    .foregroundColor(Color(UIColor.hex(textTitle)))
                     .padding(.leading, 10)
                 
                 Spacer()
@@ -176,14 +174,14 @@ struct AccountTypeListView: View {
                     .bold()
                     .font(.system(size: 18))
                 
-                Image(self.showList ? "arrowD" : "arrowR")
+                Image(accountCateInfo.isSplitList ? "arrowD" : "arrowR")
             }
             .padding(EdgeInsets(top: 10, leading: 0, bottom: -1, trailing: 0))
             .onTapGesture {
-                self.showList.toggle()
+                accountCateInfo.isSplitList.toggle()
             }
             
-            if showList {
+            if accountCateInfo.isSplitList {
                 ForEach(accountCateInfo.list) { item in
                     Divider()
                     
@@ -195,19 +193,25 @@ struct AccountTypeListView: View {
                             VStack {
                                 HStack {
                                     Text(item.name)
+                                        .font(.system(size: defaultTextSize))
+                                        .foregroundColor(Color(UIColor.hex(textTitle)))
+                                    
                                     Spacer()
+                                    
                                     Text("\(moneyFormat(item.balance))")
+                                        .font(.system(size: defaultTextSize))
+                                        .foregroundColor(Color(UIColor.hex(textTitle)))
                                 }
                                 ProgressView(value: 0.45)
                                 HStack {
                                     Text("\(3)天后还款")
-                                        .font(.system(size: 15))
+                                        .font(.system(size: 13))
                                         .foregroundColor(Color(UIColor.lightGray))
                                     
                                     Spacer()
                                     
                                     Text("可用\(moneyFormat(item.totalLimit ?? 0 - item.balance))")
-                                        .font(.system(size: 15))
+                                        .font(.system(size: 13))
                                         .foregroundColor(Color(UIColor.lightGray))
 
                                 }
@@ -220,8 +224,12 @@ struct AccountTypeListView: View {
                                 .resizable()
                                 .frame(width: iconSize, height: iconSize)
                             Text(item.name)
+                                .font(.system(size: defaultTextSize))
+                                .foregroundColor(Color(UIColor.hex(textTitle)))
                             Spacer()
                             Text("\(moneyFormat(item.balance))")
+                                .font(.system(size: defaultTextSize))
+                                .foregroundColor(Color(UIColor.hex(textTitle)))
                         }
                         .frame(width: 330)
                         .padding([.top, .bottom], 8)

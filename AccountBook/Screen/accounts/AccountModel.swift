@@ -103,6 +103,8 @@ struct AccountCategoryListStruct: Identifiable {
     var category: Int
     // 所有账户总金额
     var totalAmount: Double
+    // 列表是否展开
+    var isSplitList: Bool
     // 账户列表
     var list: [AccountDetailStruct]
 }

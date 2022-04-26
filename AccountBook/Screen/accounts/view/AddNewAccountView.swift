@@ -10,6 +10,8 @@ import SwiftUI
 struct AddNewAccountView: View {
     @EnvironmentObject var accountData: AccountViewModel
     
+    @Environment(\.presentationMode) var presentation
+    
     @State private var descStr = ""
     @State private var limitStr = ""
     @State private var balanceStr = ""
@@ -139,9 +141,15 @@ struct AddNewAccountView: View {
                     accountData.curNewAccountInfo.balance = Double(balanceStr) ?? 0
                     accountData.curNewAccountInfo.desc = descStr
                     accountData.curNewAccountInfo.totalLimit = Double(limitStr) ?? 0
-                    accountData.curNewAccountInfo.deadLineDate = Int(deadTimeStr)
+                    accountData.curNewAccountInfo.deadLineDate = Int(deadTimeStr) ?? 0
                     
                     accountData.addNewAccount()
+                    
+//                    if !isBankType(category: accountData.curNewAccountInfo.category, type: accountData.curNewAccountInfo.type) {
+//                        presentation.wrappedValue.dismiss()
+//                    }
+                    presentation.wrappedValue.dismiss()
+                    
                 }, label: {
                     Text("保存")
                         .font(.system(size: 15))
@@ -155,7 +163,6 @@ struct AddNewAccountView: View {
         }
         .frame(width: UIScreen.main.bounds.width)
         .padding(.bottom, .infinity)
-
     }
 }
 

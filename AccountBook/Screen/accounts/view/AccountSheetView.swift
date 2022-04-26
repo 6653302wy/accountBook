@@ -40,6 +40,7 @@ struct AccountSheetView: View {
                                     // 银行卡类型， 弹出选择银行弹出
                                     self.isChooseBankType = isBankType(category: cate.category, type: cate.type)
                                     self.accountData.setCurChoosenAccount(category: cate.category, type:cate.type, icon: isChooseBankType ? "" : cate.icon, name: isChooseBankType ? "" : cate.name)
+                                    
                                     self.clickedCate.toggle()
                                 }
                         }
