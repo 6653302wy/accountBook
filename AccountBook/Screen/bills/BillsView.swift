@@ -9,9 +9,14 @@ import SwiftUI
 
 // 顶部header bar
 struct HeaderNavBarView: View{
+    @EnvironmentObject var appData: AppData
+    
     var body: some View {
         HStack{
             Image("menu").padding(.leading, 20)
+                .onTapGesture {
+                    appData.showSidebarMenu.toggle()
+                }
             Spacer()
             Image("chart").padding(.trailing, 20)
         }

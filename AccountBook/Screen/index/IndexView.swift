@@ -45,6 +45,12 @@ struct BottomTabBarView: View{
                         .navigationBarTitle("")
                         .tag(0)
                 
+//                NavigationLink(
+//                    destination: BookingView()) {
+//                        Image(self.tabs[1].icon)
+//                        Text(self.tabs[1].tittle)
+//                    }
+
                 BookingView()
                         .tabItem {
                             Image(self.tabs[1].icon)
@@ -70,12 +76,25 @@ struct BottomTabBarView: View{
     }
 }
 
-struct IndexView: View {
+struct MainView: View {
+    @EnvironmentObject var appData: AppData
     
     var body: some View {
-        VStack{
+        SideBarStack(sidebarWidth: 150, showSidebar: $appData.showSidebarMenu) {
+            SideBarMenuView()
+        } content: {
             BottomTabBarView()
-        }
+        }.edgesIgnoringSafeArea(.all)
+    }
+}
+
+
+struct IndexView: View {
+    private var appData = AppData()
+    
+    var body: some View {
+        MainView()
+            .environmentObject(appData)
     }
 }
 

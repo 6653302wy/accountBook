@@ -9,11 +9,15 @@ import SwiftUI
 
 // 顶部header bar
 struct HeaderBarView: View{
+    @EnvironmentObject var appData: AppData
     @EnvironmentObject var accountData: AccountViewModel
         
     var body: some View {
         HStack{
             Image("menu").padding(.leading, 20)
+                .onTapGesture {
+                    appData.showSidebarMenu.toggle()
+                }
             Spacer()
             Text("资产管理")
                 .font(.system(size: pageTitleTextSize))
