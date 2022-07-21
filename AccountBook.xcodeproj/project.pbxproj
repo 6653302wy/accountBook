@@ -27,6 +27,9 @@
 		553AACC5281A85900088051B /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553AACC4281A85900088051B /* AppData.swift */; };
 		553AACC8281A89520088051B /* HeaderNaviBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553AACC7281A89520088051B /* HeaderNaviBarView.swift */; };
 		553AACCA281A89FE0088051B /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553AACC9281A89FE0088051B /* Router.swift */; };
+		553AACCD281A9FEB0088051B /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553AACCC281A9FEB0088051B /* SettingView.swift */; };
+		553AACD0281AA0300088051B /* BudgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553AACCF281AA0300088051B /* BudgetView.swift */; };
+		553AACD3281AA22C0088051B /* BookingCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 553AACD2281AA22C0088051B /* BookingCategoryView.swift */; };
 		555EF9ED2807B8C3003AB5B9 /* AccountBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EF9EC2807B8C3003AB5B9 /* AccountBookApp.swift */; };
 		555EF9EF2807B8C3003AB5B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 555EF9EE2807B8C3003AB5B9 /* ContentView.swift */; };
 		555EF9F12807B8C4003AB5B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 555EF9F02807B8C4003AB5B9 /* Assets.xcassets */; };
@@ -61,6 +64,9 @@
 		553AACC4281A85900088051B /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		553AACC7281A89520088051B /* HeaderNaviBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderNaviBarView.swift; sourceTree = "<group>"; };
 		553AACC9281A89FE0088051B /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		553AACCC281A9FEB0088051B /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		553AACCF281AA0300088051B /* BudgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BudgetView.swift; sourceTree = "<group>"; };
+		553AACD2281AA22C0088051B /* BookingCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingCategoryView.swift; sourceTree = "<group>"; };
 		555EF9E92807B8C3003AB5B9 /* AccountBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccountBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		555EF9EC2807B8C3003AB5B9 /* AccountBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountBookApp.swift; sourceTree = "<group>"; };
 		555EF9EE2807B8C3003AB5B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -124,6 +130,30 @@
 			path = headerNavBar;
 			sourceTree = "<group>";
 		};
+		553AACCB281A9FD80088051B /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				553AACCC281A9FEB0088051B /* SettingView.swift */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
+		553AACCE281AA0120088051B /* budget */ = {
+			isa = PBXGroup;
+			children = (
+				553AACCF281AA0300088051B /* BudgetView.swift */,
+			);
+			path = budget;
+			sourceTree = "<group>";
+		};
+		553AACD1281AA1D80088051B /* bookingCategory */ = {
+			isa = PBXGroup;
+			children = (
+				553AACD2281AA22C0088051B /* BookingCategoryView.swift */,
+			);
+			path = bookingCategory;
+			sourceTree = "<group>";
+		};
 		555EF9E02807B8C3003AB5B9 = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +212,9 @@
 		559FB5CC28095F3800969807 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				553AACD1281AA1D80088051B /* bookingCategory */,
+				553AACCE281AA0120088051B /* budget */,
+				553AACCB281A9FD80088051B /* setting */,
 				553AACC6281A893B0088051B /* headerNavBar */,
 				553AACBA281A7FE80088051B /* sideBar */,
 				55B5DAA2280D90DA009ADBFC /* charts */,
@@ -351,12 +384,15 @@
 				553AACBC281A80000088051B /* SideBarMenuView.swift in Sources */,
 				5524A577280EC05D009AD7B3 /* AccountModel.swift in Sources */,
 				559FB5D0280BEFF100969807 /* IndexView.swift in Sources */,
+				553AACD3281AA22C0088051B /* BookingCategoryView.swift in Sources */,
 				5524A58A2812739E009AD7B3 /* AddNewAccountView.swift in Sources */,
 				555EF9ED2807B8C3003AB5B9 /* AccountBookApp.swift in Sources */,
 				55B5DAA1280D8E78009ADBFC /* BillsView.swift in Sources */,
+				553AACCD281A9FEB0088051B /* SettingView.swift in Sources */,
 				5524A57B280EC6C0009AD7B3 /* DateTools.swift in Sources */,
 				553AACC8281A89520088051B /* HeaderNaviBarView.swift in Sources */,
 				5524A57D280FECE3009AD7B3 /* banks.json in Sources */,
+				553AACD0281AA0300088051B /* BudgetView.swift in Sources */,
 				5524A579280EC5CE009AD7B3 /* AccountViewModel.swift in Sources */,
 				5524A575280E8710009AD7B3 /* BillsViewModel.swift in Sources */,
 			);

@@ -75,7 +75,7 @@ struct MonthOverView :View{
 }
 
 // 预算模块(点击进入预算页)
-struct BudgetView: View{
+struct BudgetStructView: View{
     @State private var pro = 0.3
     
     var body: some View{
@@ -176,7 +176,7 @@ struct BillsView: View {
             ScrollView{
                 LazyVStack{
                     MonthOverView()
-                    BudgetView()
+                    BudgetStructView()
                     BillListView()
                 }
             }
